@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &100598393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100598394}
+  - component: {fileID: 100598395}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &100598394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100598393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &100598395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100598393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b0a1029893341c6a828548cee78362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questId: 10
 --- !u!1 &228237139
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talkManager: {fileID: 1016313104}
+  questManager: {fileID: 100598395}
   talkPanel: {fileID: 292840909}
   talkText: {fileID: 320241278}
+  portraitImg: {fileID: 1577238843}
   scanObject: {fileID: 0}
   isAction: 0
   talkIndex: 0
@@ -463,7 +509,7 @@ GameObject:
   - component: {fileID: 292840912}
   - component: {fileID: 292840911}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Talk Set
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,6 +528,7 @@ RectTransform:
   m_Children:
   - {fileID: 320241280}
   - {fileID: 2139874150}
+  - {fileID: 1577238845}
   m_Father: {fileID: 1675119226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5235,7 +5282,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7842,6 +7889,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0ddfa314811462ea3e68a925baecb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portraitArr:
+  - {fileID: -1498629393909832148, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: 5617964459799366859, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -197052863676312565, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -7439931144458868404, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: 1008977445375097534, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -3047031512852110731, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -8419047691886735130, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -943545548610400999, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
 --- !u!1 &1133001371
 GameObject:
   m_ObjectHideFlags: 0
@@ -7907,7 +7963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9dfc7b3a60e34201ae2c7af661e71da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   manager: {fileID: 228237140}
 --- !u!50 &1224749014
 Rigidbody2D:
@@ -8123,6 +8179,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1577238842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577238845}
+  - component: {fileID: 1577238844}
+  - component: {fileID: 1577238843}
+  m_Layer: 5
+  m_Name: Portrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1577238843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577238842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1498629393909832148, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1577238844
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577238842}
+  m_CullTransparentMesh: 1
+--- !u!224 &1577238845
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577238842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 292840910}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -20, y: 150}
+  m_SizeDelta: {x: 141.66669, y: 191.66667}
+  m_Pivot: {x: 1, y: 0}
 --- !u!1 &1675119225
 GameObject:
   m_ObjectHideFlags: 0
@@ -8237,7 +8368,7 @@ GameObject:
   - component: {fileID: 1713132056}
   - component: {fileID: 1713132059}
   m_Layer: 8
-  m_Name: Ludo NPC
+  m_Name: Dahi's Dad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8251,7 +8382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713132054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31, y: -2, z: 0}
+  m_LocalPosition: {x: 24, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1439762623}
@@ -8270,7 +8401,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0021369457, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8281,7 +8412,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7563915, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &1713132057
 Rigidbody2D:
@@ -8449,7 +8580,7 @@ GameObject:
   - component: {fileID: 2040413083}
   - component: {fileID: 2040413084}
   m_Layer: 8
-  m_Name: Luna NPC
+  m_Name: Dahi's Mom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
