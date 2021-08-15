@@ -24,24 +24,24 @@ public class TalkManager : MonoBehaviour
          * box = 200
          * desk = 100
          */
-        talkData.Add(1000, new string[] { "한남 실좆 6.9cm 재기해라 이기:3",
-                                            "한남소추:2" });
-        talkData.Add(100, new string[] { "틀니 쉰내 내뿜지 말라이기야",
-                                            "확 회쳐벌라 조용히 있다 나가라" });
-        talkData.Add(200, new string[] { "농어랴~",
-                                            "다희엄마 끓여줘야지 머" });
-        talkData.Add(2000, new string[] { "저 놈저저 당체 무슨....:3",
-                                            "수철이가 뭐 착각했나본데요 뭔 저런;;;:1" });
+        talkData.Add(1000, new string[] { "안녕:1",
+                                            "이 곳에 처음 왔구나?:2" });
+        talkData.Add(100, new string[] { "누군가 사용한 흔적이 있는 책상이다."});
+        talkData.Add(200, new string[] { "평범한 나무상자다." });
+        talkData.Add(2000, new string[] { "여어.:1",
+                                            "이 호수는 정말 아름답지?:0",
+                                            "사실 이 호수에는 무언가의 비밀이 숨겨져 있다고 해:1"});
 
 
         //Quest Talk
-        talkData.Add(10 + 1000, new string[] { "이 논비건은 뭐노 이기:3",
-                                                "가서 한남유충이랑 말이나 섞으라 이기야:1",
-                                                "Girls can do anything!:2"});
+        talkData.Add(10 + 1000, new string[] { "어서 와.:2",
+                                                "이 마을에 놀라운 전설이 있다는데:1",
+                                                "오른쪽 호수 쪽에 루도가 알려줄꺼야:2"});
 
-        talkData.Add(11 + 2000, new string[] { "다희 엄마가 독박육아를 하더니 정신이 나갔나봐...:0",
-                                                "농어라도 잡아서 끓여줘야겠는데:1",
-                                                "저기 물 옆에 농어좀 갖다줘:2"});
+        talkData.Add(11 + 2000, new string[] { "여어.:2",
+                                                "이 호수의 전설을 들으러 온거야?:1",
+                                                "그럼 일 좀 하나 해주면 좋을텐데..:0",
+                                                "내 집 근처에 떨어진 동전 좀 주워줬으면 해.:2"});
 
         //portrait Data
 
